@@ -12,6 +12,7 @@ public class controlador implements ActionListener {
     vista vista;
     private String tabla;
     Agregar agregar;
+    int cont=1;
     public controlador(vista vista, modelo modelo){
         
         this.vista= vista;
@@ -36,6 +37,18 @@ public class controlador implements ActionListener {
         }
         
         tabla=(String)(vista.getDesplegable().getSelectedItem());
+        if (tabla.equals("estado")){
+            if (cont==1){
+            cont = vista.TablaEstado();
+            cont++;
+            }
+        }
+        if (tabla.equals("tipo_recurso")){
+            vista.TablaTipoRecur();
+        }
+        if (tabla.equals("tipo_responsable")){
+            vista.TablaTipoRespo();
+        }
         this.modelo.mostrarDatos(tabla);
         
     }

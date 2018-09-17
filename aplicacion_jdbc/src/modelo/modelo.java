@@ -47,23 +47,11 @@ public class modelo {
         ArrayList<String> campos = new ArrayList<String>();
         String consulta="select * from "+tabla;
         try{
-            //vista.getArea().setText("");
+            
             Statement sentencia = com.createStatement();
             resultado = sentencia.executeQuery(consulta);
             vista.getTabla().setModel(mostrarDatos2());
-            //vista.validate();
-            /*ResultSetMetaData resulbd=resultado.getMetaData();
-            for (int i=1;i<=resulbd.getColumnCount();i++){
-                campos.add(resulbd.getColumnLabel(i));
-            }
-            while(resultado.next()){
-                for(String nombrecampo:campos){
-                   vista.getArea().append(resultado.getString(nombrecampo)+" ");
-                }
-                vista.getArea().append("\n");
-                
-            }*/
-            
+                       
         }catch(Exception e){
             e.printStackTrace();
             System.out.println("mostrar datos");

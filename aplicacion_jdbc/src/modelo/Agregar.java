@@ -38,28 +38,60 @@ public class Agregar {
             try {
                 System.out.println("estado");
                 sentencia = "insert into estado (Estado,idEstado) values (?,?)";
-                vista.campoTexto();
                 dato1= vista.campo1.getText();
                 dato2 = vista.campo2.getText();
                 PreparedStatement esta = modelo.com.prepareStatement(sentencia);
-                esta.setString(1, dato1);
-                esta.setInt(2, Integer.parseInt(dato2));
+                esta.setString(1, dato2);
+                esta.setInt(2, Integer.parseInt(dato1));
                 esta.executeUpdate();
+                System.out.println("ejecuto ok");
             } catch (SQLException ex) {
                 Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             
-        }else if (modelo.datosTabla=="recursos"){
+        }else if (tabla.equalsIgnoreCase("tipo_recurso")){
+            
+            try {
+                sentencia = "insert into tipo_recurso (Recurso,Tipo_Recurso) values (?,?)";
+                dato1= vista.campo1.getText();
+                dato2 = vista.campo2.getText();
+                PreparedStatement esta = modelo.com.prepareStatement(sentencia);
+                esta.setString(1, dato2);
+                esta.setInt(2, Integer.parseInt(dato1));
+                esta.executeUpdate();
+                System.out.println("ejecuto ok");
+            } catch (SQLException ex) {
+                Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            
+            
+        }else if (tabla.equalsIgnoreCase("tipo_responsable")){
+            
+            try {
+                sentencia = "insert into tipo_responsable (Area,Tipo_Res) values (?,?)";
+                dato1= vista.campo1.getText();
+                dato2 = vista.campo2.getText();
+                PreparedStatement esta = modelo.com.prepareStatement(sentencia);
+                esta.setString(1, dato2);
+                esta.setString(2, dato1);
+                esta.executeUpdate();
+                System.out.println("ejecuto ok");
+            } catch (SQLException ex) {
+                Logger.getLogger(Agregar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else if (modelo.datosTabla=="recursos"){
             sentencia = "insert into recursos (Codigo,Estado,Fecha_compra,Marca,Provedor,Serial,Tipo_recurso,Valor_Comercial) values (?,?,?,?,?,?,?,?)";
         }else if (modelo.datosTabla=="responsable"){
             sentencia = "insert into responsable (Codigo,Nombre,Apellido,Telefono,Tipo_Res) values (?,?,?,?,?)";
         }else if (modelo.datosTabla=="tipo_recurso"){
             sentencia = "insert into tipo_recurso (Tipo_Recurso,Recurso) values (?,?)";
         }else if (modelo.datosTabla=="tipo_responsable"){
-            sentencia = "insert into tipo_responsable (Tipo_Res,Area) values (?,?)";
-            
-        }
+            sentencia = "insert into tipo_responsable (Tipo_Res,Area) values (?,?)";   
+        }else if (modelo.datosTabla=="estao"){
+            sentencia = "insert into tipo_responsable (idEstado,Estado) values (?,?)";
         /*int c = meta.getColumnCount();
         for(int i=1; i<c ;i++)
         meta.getColumnName(c+1);
@@ -74,4 +106,5 @@ public class Agregar {
         
     }
     
+}
 }

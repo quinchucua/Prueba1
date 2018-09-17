@@ -35,7 +35,7 @@ public class datos extends AbstractTableModel {
         }
         try {
             //System.out.println(registro.getRow()+"filas");
-            return registro.getRow()+1;
+            return registro.getRow();
         } catch (SQLException ex) {
             Logger.getLogger(datos.class.getName()).log(Level.SEVERE, null, ex);
             return 0;
