@@ -6,11 +6,8 @@
 package modelo;
 
 
-import java.awt.BorderLayout;
 import java.sql.*;
 import java.util.ArrayList;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.table.TableModel;
 import vista.vista;
 

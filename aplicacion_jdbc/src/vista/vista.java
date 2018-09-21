@@ -19,7 +19,7 @@ public class vista extends JFrame {
     private JTable tabla;
     public  JPanel panel2, panel,panel3,panel4;
     public JButton boton1,boton2,boton3;
-    public JTextField campo1, campo2;
+    public JTextField campo1, campo2,campo3,campo4,campo5,campo6,campo7,campo8;
     
     modelo modelo;
     controlador controlador;
@@ -55,6 +55,9 @@ public class vista extends JFrame {
         this.boton1.addActionListener(ObtenerControlador());
         this.boton2.addActionListener(ObtenerControlador());
         this.boton3.addActionListener(ObtenerControlador());
+        
+        
+        
 
     }
     public controlador ObtenerControlador(){
@@ -103,46 +106,79 @@ public class vista extends JFrame {
         panel4.add(boton1);
         panel4.add(boton2);
         panel4.add(boton3);
+        campo1= new JTextField("",15);
+        campo2= new JTextField("",15);
+        campo3= new JTextField("",15);
+        campo4= new JTextField("",15);
+        campo5= new JTextField("",15);
+        campo6= new JTextField("",15);
+        campo7= new JTextField("",15);
+        campo8= new JTextField("",15);
         add(panel);
         Eventos();
                 
         
                  
     }
-    public int TablaEstado(){
+    public void TablaEstado(){
         panel3.removeAll();
-        campo1= new JTextField("",15);
-        campo2= new JTextField("",15);
         panel3.add(campo1);
         panel3.add(campo2);
-        return 2;
+        panel3.updateUI();
+        
     }
     public void TablaTipoRecur(){
-        campo1.setText("");
-        campo2.setText("");
-        /*panel3.removeAll();
-        this.repaint();
-        panel3.repaint();
-        
-        campo1= new JTextField("",15);
-        campo2= new JTextField("",15);
+        panel3.removeAll();
         panel3.add(campo1);
         panel3.add(campo2);
-        return 1;*/
+        campo1.setText("");
+        campo2.setText("");
+        panel3.updateUI();
+       
     }
     public void TablaTipoRespo(){
-        campo1.setText("");
-        campo2.setText("");
-        /*panel3.removeAll();
-        this.repaint();
-        panel3.repaint();
-        
-        campo1= new JTextField("",15);
-        campo2= new JTextField("",15);
+        panel3.removeAll();
         panel3.add(campo1);
         panel3.add(campo2);
-        return 1;*/
+        campo1.setText("");
+        campo2.setText("");
+        panel3.updateUI();
+       
     }
+    public void TablaResponsable(){
+        panel3.removeAll();
+        panel3.add(campo1);
+        panel3.add(campo2);
+        panel3.add(campo3);
+        panel3.add(campo4);
+        panel3.add(campo5);
+        campo1.setText("");
+        campo2.setText("");
+        campo3.setText("");
+        campo4.setText("");
+        campo5.setText("");
+        panel3.updateUI();
+        }
+     public void TablaRecursos(){
+        panel3.removeAll();
+        panel3.add(campo1);
+        panel3.add(campo2);
+        panel3.add(campo3);
+        panel3.add(campo4);
+        panel3.add(campo5);
+        panel3.add(campo6);
+        panel3.add(campo7);
+        panel3.add(campo8);
+        campo1.setText("");
+        campo2.setText("");
+        campo3.setText("");
+        campo4.setText("");
+        campo5.setText("");
+        campo6.setText("");
+        campo7.setText("");
+        campo8.setText("");
+        panel3.updateUI();
+        }
     
 }
     

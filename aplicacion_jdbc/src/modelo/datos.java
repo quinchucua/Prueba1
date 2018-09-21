@@ -31,7 +31,7 @@ public class datos extends AbstractTableModel {
             registro.last();
         } catch (SQLException ex) {
             Logger.getLogger(datos.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("getRow");
+            //System.out.println("getRow");
         }
         try {
             //System.out.println(registro.getRow()+"filas");
@@ -60,7 +60,7 @@ public class datos extends AbstractTableModel {
         try{
             if (registro.getRow()>i){
             registro.absolute(i+1);
-            System.out.println(registro.getObject(i1+1));
+            //System.out.println(registro.getObject(i1+1));
             return registro.getObject(i1+1);
             }
             
